@@ -1,11 +1,11 @@
 // The trigger word that precedes most commands and will activate the bot
-exports.trigger = "physics";
+exports.trigger = "!cvcj";
 
 // Bot owner information
 exports.owner = {
     "names": {
-        "short": "Cameron",
-        "long": "Cameron Bernhardt"
+        "short": "Shashwat",
+        "long": "Shashwat Jolly"
     },
     "id": "100007016509302" // ID of bot owner (for secure commands, reports, and alerts)
 };
@@ -13,15 +13,15 @@ exports.owner = {
 // Bot information
 exports.bot = {
     "names": {
-        "short": "AØBøt", // Will be used as 'nickname' in chat (remove if same as account name)
-        "long": "AssumeZero Bot" // Name displayed in profile on bot's Facebook account
+        "short": "CVCJ_Bot", // Will be used as 'nickname' in chat (remove if same as account name)
+        "long": "CVCJ Bot" // Name displayed in profile on bot's Facebook account
     },
     "id": "100041587845629" // Bot's ID (for security purposes in commands)
 };
 
 // Location of the bot repo if automatic GitHub webhook deploys are used
 // (see server.js for details)
-exports.repoPath = "/home/cameron/AssumeZero-Bot/";
+// exports.repoPath = "/home/cameron/AssumeZero-Bot/";
 
 // Determines whether bot grammar is "contextless"
 // i.e. whether the command must match from the start of the string or anywhere within it
@@ -34,7 +34,7 @@ exports.defaultTitle = "Unnamed chat";
 
 // Heroku settings (might need to tweak some things if using another host)
 // App name
-exports.appName = "assume-bot";
+exports.appName = "cvcj-bot";
 
 // Server URL
 exports.serverURL = `http://${exports.appName}.herokuapp.com`;
@@ -50,7 +50,7 @@ exports.localSleepTime = 3;
 exports.localWakeTime = 9;
 
 // Your desired timezone for displaying times
-exports.timeZone = "America/New_York";
+exports.timeZone = "Kolkata";
 
 // Time in seconds to ban users for Order 66
 exports.order66Time = 15;
