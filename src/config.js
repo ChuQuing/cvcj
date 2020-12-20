@@ -16,7 +16,7 @@ exports.bot = {
         "short": "CVCJ_Bot", // Will be used as 'nickname' in chat (remove if same as account name)
         "long": "CVCJ Bot" // Name displayed in profile on bot's Facebook account
     },
-    "id": "100001230758543" // Bot's ID (for security purposes in commands)
+    "id": "100060077085629" // Bot's ID (for security purposes in commands)
 };
 
 // Location of the bot repo if automatic GitHub webhook deploys are used
