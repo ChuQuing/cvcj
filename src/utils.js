@@ -634,6 +634,23 @@ exports.getScore = (userId, callback) => {
     mem.get(`userscore_${userId}`, callback);
 };
 
+exports.getRoasts = (userId, callback) => {
+    mem.get(`roasts_${userId}`, callback);
+}
+
+exports.setRoast = (userId, roast, callback) => {
+    mem.get(`roasts_${userId}`, (err, val) => {
+        let roasts = JSON.parse(val);
+        if(!roasts) {
+            roasts = [];
+        }
+        roasts.push(roast);
+        mem.set(`roasts_${userId}`, JSON.stringify(roasts), {}, (err, success) => {
+            callback(success ? null : err);
+        });
+    });
+}
+
 // Updates the user's score either by (if isAdd) increasing or (otherwise) decreasing
 // the user's score by the default value set in config, or 5 points if not set
 // Returns a callback with error, success, and a value equal to the user's new score

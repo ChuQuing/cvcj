@@ -808,7 +808,135 @@ const funcs = {
             utils.sendError(`User ${user} not found`, threadId);
         }
     },
+    "roast": (threadId, cmatch, groupInfo) => {
+        console.log(cmatch);
+        console.log(groupInfo);
+        const user = cmatch[1].toLowerCase();
+        const userId = groupInfo.members[user];
+        const user_cap = user.substring(0, 1).toUpperCase() + user.substring(1);
+        // utils.sendMessage()
+        utils.sendMessage(`Roast called on ${user_cap}`, threadId);
+        utils.getRoasts(userId, (err, val) => {
+            if(!err) {
+                const roasts = JSON.parse(val);
+                const roast =  roasts[Math.floor(Math.random() * roasts.length)];
+                return utils.sendMessage(roast, threadId);
+            }
+            else {
+                console.log(err);
+            }
+        });
+        // if(groupInfo.roasts && groupInfo.roasts[userId]) {
+        //     const roast = groupInfo.roasts[userId][Math.floor(Math.random() * items.length)];
+        //     console.log("Roast: " + roast);
+        //     return utils.sendMessage(roast, threadId);
+        // }
+        // const handle = cmatch[2];
+        // if (cmatch[1]) {
+        //     // Unfollow
+        //     const key = handle.toLowerCase();
+        //     if (groupInfo.following[key]) {
+        //         delete groupInfo.following[key];
+        //         utils.setGroupPropertyAndHandleErrors("following", groupInfo,
+        //             "Huh, couldn't unfollow that user for some reason. Please try again.",
+        //             `Success! You've unfollowed @${handle}.`
+        //         );
+        //     } else {
+        //         utils.sendError(`You're not currently following @${handle}. Use "${config.trigger} follow list" for a list of the users you're following.`, threadId);
+        //     }
+        // } else {
+        //     // Follow
+        //     if (handle === "list") {
+        //         const users = Object.keys(groupInfo.following).map(username => `\n@${username}`).join('');
+        //         if (users.length > 0) {
+        //             return utils.sendMessage(`List of users you're currently following in this chat:\n${users}`, threadId);
+        //         }
+        //         return utils.sendMessage("You're not currently following any users in this chat.", threadId);
+        //     }
+
+        //     utils.getLatestTweetID(handle, (err, id, userInfo) => {
+        //         if (err) {
+        //             utils.sendError(err.message, threadId);
+        //         } else {
+        //             const { name, username } = userInfo;
+
+        //             groupInfo.following[username.toLowerCase()] = id;
+        //             utils.setGroupPropertyAndHandleErrors("following", groupInfo,
+        //                 "Huh, couldn't follow that user for some reason. Please try again.",
+        //                 `Success! You're now following tweets from ${name} (@${username}).\n\nTo stop receiving this user's tweets in this chat, use "${config.trigger} unfollow @${username}".`
+        //             );
+        //         }
+        //     });
+        // }
+    },
+    "saveRoast": (threadId, cmatch, groupInfo,  _, __, ___, messageObj) => {
+        console.log(cmatch);
+        const roast = messageObj.messageReply.body;
+        console.log(roast);
+        const user = cmatch[1].toLowerCase();
+        const userId = groupInfo.members[user];
+        const user_cap = user.substring(0, 1).toUpperCase() + user.substring(1);
+        // utils.sendMessage()
+        utils.sendMessage(`Roast saved for ${user_cap}`, threadId);
+        utils.setRoast(userId, roast, (err, val) => {
+            if (!err) {
+                utils.sendMessage(`Success! You've saved a roast for ${user_cap}.`, threadId);
+            } else {
+                console.log(err);
+            }
+        })
+        // if(!groupInfo.roasts) {
+        //     groupInfo.roasts = [];
+        // }
+        // if(!groupInfo.roasts[userId]) {
+        //     groupInfo.roasts[userId] = [];
+        // }
+        // groupInfo.roasts[userId].push(messageObj.messageReply.body);
+        // utils.setGroupPropertyAndHandleErrors("roasts", groupInfo,
+        //     "Huh, couldn't save that roast for some reason. Please try again.",
+        //     `Success! You've saved a roast for ${user_cap}.`
+        // );
+        // console.log(groupInfo);
+        // const handle = cmatch[2];
+        // if (cmatch[1]) {
+        //     // Unfollow
+        //     const key = handle.toLowerCase();
+        //     if (groupInfo.following[key]) {
+        //         delete groupInfo.following[key];
+        //         utils.setGroupPropertyAndHandleErrors("following", groupInfo,
+        //             "Huh, couldn't unfollow that user for some reason. Please try again.",
+        //             `Success! You've unfollowed @${handle}.`
+        //         );
+        //     } else {
+        //         utils.sendError(`You're not currently following @${handle}. Use "${config.trigger} follow list" for a list of the users you're following.`, threadId);
+        //     }
+        // } else {
+        //     // Follow
+        //     if (handle === "list") {
+        //         const users = Object.keys(groupInfo.following).map(username => `\n@${username}`).join('');
+        //         if (users.length > 0) {
+        //             return utils.sendMessage(`List of users you're currently following in this chat:\n${users}`, threadId);
+        //         }
+        //         return utils.sendMessage("You're not currently following any users in this chat.", threadId);
+        //     }
+
+        //     utils.getLatestTweetID(handle, (err, id, userInfo) => {
+        //         if (err) {
+        //             utils.sendError(err.message, threadId);
+        //         } else {
+        //             const { name, username } = userInfo;
+
+        //             groupInfo.following[username.toLowerCase()] = id;
+        //             utils.setGroupPropertyAndHandleErrors("following", groupInfo,
+        //                 "Huh, couldn't follow that user for some reason. Please try again.",
+        //                 `Success! You're now following tweets from ${name} (@${username}).\n\nTo stop receiving this user's tweets in this chat, use "${config.trigger} unfollow @${username}".`
+        //             );
+        //         }
+        //     });
+        // }
+    },
     "vote": (threadId, cmatch, groupInfo) => {
+        console.log(cmatch);
         const user = cmatch[2].toLowerCase();
         const userId = groupInfo.members[user];
         const user_cap = user.substring(0, 1).toUpperCase() + user.substring(1);
@@ -823,6 +951,31 @@ const funcs = {
         };
         if (userId) {
             if (cmatch[1] == ">") {
+                // Upvote
+                utils.updateScore(true, userId, getCallback(true));
+            } else {
+                // Downvote
+                utils.updateScore(false, userId, getCallback(false));
+            }
+        } else {
+            utils.sendError(`User ${user_cap} not found`, threadId);
+        }
+    },
+    "vote2": (threadId, cmatch, groupInfo) => {
+        const user = cmatch[2].toLowerCase();
+        const userId = groupInfo.members[user];
+        const user_cap = user.substring(0, 1).toUpperCase() + user.substring(1);
+        const getCallback = () => {
+            return (err, success, newScore) => {
+                if (success) {
+                    utils.sendMessage(`${user_cap}'s current score is now ${newScore}.`, threadId);
+                } else {
+                    utils.sendError("Score update failed.", threadId);
+                }
+            };
+        };
+        if (userId) {
+            if (cmatch[1] == "n") {
                 // Upvote
                 utils.updateScore(true, userId, getCallback(true));
             } else {

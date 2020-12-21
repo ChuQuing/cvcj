@@ -38,38 +38,38 @@ exports.categories = {
                 "regex": /stats(.*)/i,
                 "experimental": false
             },
-            "psa": {
-                "display_names": ["psa"],
-                "pretty_name": "PSA",
-                "short_description": "Messages all the bot's groups",
-                "description": "Announces a message to all of the group chats that the bot is present in",
-                "syntax": "psa {message}",
-                "example": "psa Hello, world!",
-                "sudo": true,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /psa ([\s\S]*)/i, // Match EVERYTHING
-                "experimental": false
-            },
-            "bug": {
-                "display_names": ["bug", "bug report"],
-                "pretty_name": "Bug",
-                "short_description": "File a bug report",
-                "description": `Messages ${config.owner.names.short} directly with your message and adds to your chat for debugging`,
-                "syntax": "bug {message}",
-                "example": "bug Pinging is broken",
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /bug(.*)?/i,
-                "experimental": false
-            },
+            // "psa": {
+            //     "display_names": ["psa"],
+            //     "pretty_name": "PSA",
+            //     "short_description": "Messages all the bot's groups",
+            //     "description": "Announces a message to all of the group chats that the bot is present in",
+            //     "syntax": "psa {message}",
+            //     "example": "psa Hello, world!",
+            //     "sudo": true,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /psa ([\s\S]*)/i, // Match EVERYTHING
+            //     "experimental": false
+            // },
+            // "bug": {
+            //     "display_names": ["bug", "bug report"],
+            //     "pretty_name": "Bug",
+            //     "short_description": "File a bug report",
+            //     "description": `Messages ${config.owner.names.short} directly with your message and adds to your chat for debugging`,
+            //     "syntax": "bug {message}",
+            //     "example": "bug Pinging is broken",
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /bug(.*)?/i,
+            //     "experimental": false
+            // },
             "alive": {
                 "display_names": ["alive", "alive?"],
                 "pretty_name": "Alive",
@@ -86,54 +86,54 @@ exports.categories = {
                 "regex": /alive(?:\?)?/i,
                 "experimental": false
             },
-            "ban": {
-                "display_names": ["ban", "unban"],
-                "pretty_name": "Ban",
-                "short_description": "",
-                "description": "Bans or unbans the provided member",
-                "syntax": "(un)ban {member}",
-                "example": "ban me",
-                "sudo": true,
-                "attachments": false,
-                "user_input": {
-                    "accepts": true,
-                    "optional": false
-                },
-                "regex": "(un)?ban",
-                "experimental": false
-            },
-            "mute": {
-                "display_names": ["mute", "unmute"],
-                "pretty_name": "Mute/unmute",
-                "short_description": "Turns on/off easter eggs",
-                "description": "Turns on/off easter eggs until they are turned back on",
-                "syntax": "(un)mute",
-                "example": ["mute", "unmute"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /(un)?mute/i,
-                "experimental": false
-            },
-            "christen": {
-                "display_names": ["christen"],
-                "pretty_name": "Christen",
-                "short_description": "Names the bot",
-                "description": "The bot doesn't see itself as a user for security purposes, so the name command will not work on it, but this command allows you to name it",
-                "syntax": "christen {name}",
-                "example": `christen ${config.bot.names.short || config.bot.names.long}`,
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /christen (.*)/i,
-                "experimental": false
-            },
+            // "ban": {
+            //     "display_names": ["ban", "unban"],
+            //     "pretty_name": "Ban",
+            //     "short_description": "",
+            //     "description": "Bans or unbans the provided member",
+            //     "syntax": "(un)ban {member}",
+            //     "example": "ban me",
+            //     "sudo": true,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": true,
+            //         "optional": false
+            //     },
+            //     "regex": "(un)?ban",
+            //     "experimental": false
+            // },
+            // "mute": {
+            //     "display_names": ["mute", "unmute"],
+            //     "pretty_name": "Mute/unmute",
+            //     "short_description": "Turns on/off easter eggs",
+            //     "description": "Turns on/off easter eggs until they are turned back on",
+            //     "syntax": "(un)mute",
+            //     "example": ["mute", "unmute"],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /(un)?mute/i,
+            //     "experimental": false
+            // },
+            // "christen": {
+            //     "display_names": ["christen"],
+            //     "pretty_name": "Christen",
+            //     "short_description": "Names the bot",
+            //     "description": "The bot doesn't see itself as a user for security purposes, so the name command will not work on it, but this command allows you to name it",
+            //     "syntax": "christen {name}",
+            //     "example": `christen ${config.bot.names.short || config.bot.names.long}`,
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /christen (.*)/i,
+            //     "experimental": false
+            // },
             "clearstats": {
                 "display_names": ["clear stats"],
                 "pretty_name": "Clear stats",
@@ -150,22 +150,22 @@ exports.categories = {
                 "regex": /clear stats/i,
                 "experimental": false
             },
-            "alias": {
-                "display_names": ["alias"],
-                "pretty_name": "Alias",
-                "short_description": "Assign an alternate username",
-                "description": "A member's default username is their first name; this command allows a user to assign an alternate username, which will be accepted in any command where a member name is required",
-                "syntax": "alias ({member}|clear {member}|{member} {alternate name})",
-                "example": [`alias me ${config.bot.names.short || "Bot"}`, `alias clear me`, `alias me`],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": true,
-                    "optional": false
-                },
-                "regex": ["alias( clear)?", "(?: (.*))?"],
-                "experimental": false
-            },
+            // "alias": {
+            //     "display_names": ["alias"],
+            //     "pretty_name": "Alias",
+            //     "short_description": "Assign an alternate username",
+            //     "description": "A member's default username is their first name; this command allows a user to assign an alternate username, which will be accepted in any command where a member name is required",
+            //     "syntax": "alias ({member}|clear {member}|{member} {alternate name})",
+            //     "example": [`alias me ${config.bot.names.short || "Bot"}`, `alias clear me`, `alias me`],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": true,
+            //         "optional": false
+            //     },
+            //     "regex": ["alias( clear)?", "(?: (.*))?"],
+            //     "experimental": false
+            // },
             "restart": {
                 "display_names": ["restart"],
                 "pretty_name": "Restart",
@@ -204,38 +204,38 @@ exports.categories = {
         "display_name": "Messenger",
         "description": "For interacting with Messenger features",
         "commands": {
-            "kick": {
-                "display_names": ["kick"],
-                "pretty_name": "Kick",
-                "short_description": "Removes member",
-                "description": "Removes a given member from the chat for an optional amount of time",
-                "syntax": "kick {member} ({number of seconds})",
-                "example": ["kick me", "kick me 25"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": true,
-                    "optional": false
-                },
-                "regex": ["kick", "(?: (\\d+))?"], // Optional number param after name
-                "experimental": false
-            },
-            "addsearch": {
-                "display_names": ["add", "search"],
-                "pretty_name": "Add/search",
-                "short_description": "",
-                "description": "Searches for the given user and either outputs the best match (for searching) or adds it to the chat (for adding)",
-                "syntax": "(add|search ({number of results})) {user}",
-                "example": ["search Physics Resurrected", "add Physics Resurrected", "search 5 Physics Resurrected"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /(add|search(?: (\d*))?) (.*)/i,
-                "experimental": false
-            },
+            // "kick": {
+            //     "display_names": ["kick"],
+            //     "pretty_name": "Kick",
+            //     "short_description": "Removes member",
+            //     "description": "Removes a given member from the chat for an optional amount of time",
+            //     "syntax": "kick {member} ({number of seconds})",
+            //     "example": ["kick me", "kick me 25"],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": true,
+            //         "optional": false
+            //     },
+            //     "regex": ["kick", "(?: (\\d+))?"], // Optional number param after name
+            //     "experimental": false
+            // },
+            // "addsearch": {
+            //     "display_names": ["add", "search"],
+            //     "pretty_name": "Add/search",
+            //     "short_description": "",
+            //     "description": "Searches for the given user and either outputs the best match (for searching) or adds it to the chat (for adding)",
+            //     "syntax": "(add|search ({number of results})) {user}",
+            //     "example": ["search Physics Resurrected", "add Physics Resurrected", "search 5 Physics Resurrected"],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /(add|search(?: (\d*))?) (.*)/i,
+            //     "experimental": false
+            // },
 
             "color": {
                 "display_names": ["color"],
@@ -317,22 +317,22 @@ exports.categories = {
                 "regex": /emoji ([\uD83C-\uDBFF\uDC00-\uDFFF]{1,2})/iu, // Match emoji w/ Unicode modifier (1-2 chars)
                 "experimental": false
             },
-            "photo": {
-                "display_names": ["picture", "photo", "image"],
-                "pretty_name": "Photo",
-                "short_description": "Sets group photo",
-                "description": "Changes the group's photo to the image at the specified URL or the attached image, or displays the current photo if neither is given.",
-                "syntax": "(photo|picture|image) ({url})",
-                "example": ["photo http://i.imgur.com/tzwVWot.png", "photo [attach an image]", "photo"],
-                "sudo": false,
-                "attachments": true,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /(?:photo|picture|image)(?: ((?:http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i, // URL
-                "experimental": false
-            },
+            // "photo": {
+            //     "display_names": ["picture", "photo", "image"],
+            //     "pretty_name": "Photo",
+            //     "short_description": "Sets group photo",
+            //     "description": "Changes the group's photo to the image at the specified URL or the attached image, or displays the current photo if neither is given.",
+            //     "syntax": "(photo|picture|image) ({url})",
+            //     "example": ["photo http://i.imgur.com/tzwVWot.png", "photo [attach an image]", "photo"],
+            //     "sudo": false,
+            //     "attachments": true,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /(?:photo|picture|image)(?: ((?:http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i, // URL
+            //     "experimental": false
+            // },
             "poll": {
                 "display_names": ["poll"],
                 "pretty_name": "Poll",
@@ -349,22 +349,22 @@ exports.categories = {
                 "regex": /poll ([^[]+)(?:\[(.*)\])?/i,
                 "experimental": false
             },
-            "title": {
-                "display_names": ["set title", "change title", "title"],
-                "pretty_name": "Set title",
-                "short_description": "",
-                "description": "Sets the title to the specified value",
-                "syntax": "title {title}",
-                "example": "title One Chat to Rule Them All",
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /title (.*)/i,
-                "experimental": false
-            },
+            // "title": {
+            //     "display_names": ["set title", "change title", "title"],
+            //     "pretty_name": "Set title",
+            //     "short_description": "",
+            //     "description": "Sets the title to the specified value",
+            //     "syntax": "title {title}",
+            //     "example": "title One Chat to Rule Them All",
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /title (.*)/i,
+            //     "experimental": false
+            // },
             "branch": {
                 "display_names": ["branch"],
                 "pretty_name": "Branch",
@@ -381,80 +381,112 @@ exports.categories = {
                 "regex": /branch ([^,]+ )?((?:[^,]+(?:,|$))+)/i,
                 "experimental": false
             },
-            "restore": {
-                "display_names": ["restore"],
-                "pretty_name": "Restore",
-                "short_description": "Restores the properties of a previous chat",
-                "description": "Given a thread ID for an existing chat that the bot is in, this will change the current chat's properties (color, nicknames, title, etc.) to match",
-                "syntax": "restore {thread ID}",
-                "example": ["restore 883154065107088"],
-                "sudo": true,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /restore (\d+)/i,
-                "experimental": false
-            },
-            "admin": {
-                "display_names": ["admin", "deadmin"],
-                "pretty_name": "(De)admin",
-                "short_description": "De(admin) a user",
-                "description": "Change a user's admin status for a group",
-                "syntax": "(de)admin {user}",
-                "example": ["admin me", "deadmin me"],
-                "sudo": true,
+            // "restore": {
+            //     "display_names": ["restore"],
+            //     "pretty_name": "Restore",
+            //     "short_description": "Restores the properties of a previous chat",
+            //     "description": "Given a thread ID for an existing chat that the bot is in, this will change the current chat's properties (color, nicknames, title, etc.) to match",
+            //     "syntax": "restore {thread ID}",
+            //     "example": ["restore 883154065107088"],
+            //     "sudo": true,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /restore (\d+)/i,
+            //     "experimental": false
+            // },
+            // "admin": {
+            //     "display_names": ["admin", "deadmin"],
+            //     "pretty_name": "(De)admin",
+            //     "short_description": "De(admin) a user",
+            //     "description": "Change a user's admin status for a group",
+            //     "syntax": "(de)admin {user}",
+            //     "example": ["admin me", "deadmin me"],
+            //     "sudo": true,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": true,
+            //         "optional": false
+            //     },
+            //     "regex": "(de)?admin",
+            //     "experimental": false
+            // }
+        }
+    },
+    // "hidden": {
+    //     "commands": {
+    //         "destroy": { // DANGEROUS COMMAND
+    //             "display_names": [], // Secret
+    //             "pretty_name": "Destroy",
+    //             "short_description": "",
+    //             "description": "Destroys the chat",
+    //             "syntax": "sudo destroy confirm", // Redundancy to prevent accidental triggers
+    //             "example": "",
+    //             "sudo": true,
+    //             "attachments": false,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /sudo destroy confirm/i,
+    //             "experimental": false
+    //         },
+    //         "infiltrate": {
+    //             "display_names": [], // Secret command
+    //             "pretty_name": "Infiltrate",
+    //             "short_description": "",
+    //             "description": "Allows the bot to add the admin to groups that it's in",
+    //             "syntax": "infiltrate ({threadId}|{group name})",
+    //             "example": ["infiltrate", "infiltrate 883154065107088", "infiltrate Assume Zero Brain Power"],
+    //             "sudo": true,
+    //             "attachments": false,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /infiltrate(?: ([0-9]+|.+))?/i,
+    //             "experimental": false
+    //         }
+    //     }
+    // },
+    "fun": {
+        "display_name": "Fun",
+        "description": "Just for fun",
+        "commands": {
+            "roast": {
+                "display_names": ["roast", "roast save"],
+                "pretty_name": "Roast",
+                "short_description": "Roast users",
+                "description": "Allows users to retrieve a random roast on a user.",
+                "syntax": "roast {member}",
+                "example": ["roast me"],
+                "sudo": false,
                 "attachments": false,
                 "user_input": {
                     "accepts": true,
                     "optional": false
                 },
-                "regex": "(de)?admin",
-                "experimental": false
-            }
-        }
-    },
-    "hidden": {
-        "commands": {
-            "destroy": { // DANGEROUS COMMAND
-                "display_names": [], // Secret
-                "pretty_name": "Destroy",
-                "short_description": "",
-                "description": "Destroys the chat",
-                "syntax": "sudo destroy confirm", // Redundancy to prevent accidental triggers
-                "example": "",
-                "sudo": true,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /sudo destroy confirm/i,
+                "regex": "roast",
                 "experimental": false
             },
-            "infiltrate": {
-                "display_names": [], // Secret command
-                "pretty_name": "Infiltrate",
-                "short_description": "",
-                "description": "Allows the bot to add the admin to groups that it's in",
-                "syntax": "infiltrate ({threadId}|{group name})",
-                "example": ["infiltrate", "infiltrate 883154065107088", "infiltrate Assume Zero Brain Power"],
-                "sudo": true,
+            "saveRoast": {
+                "display_names": ["roast save"],
+                "pretty_name": "Save Roast",
+                "short_description": "Save roast for users",
+                "description": "Allows users to save the choicest roasts on users.",
+                "syntax": "roast {member}",
+                "example": ["roast save me"],
+                "sudo": false,
                 "attachments": false,
                 "user_input": {
-                    "accepts": false,
+                    "accepts": true,
                     "optional": false
                 },
-                "regex": /infiltrate(?: ([0-9]+|.+))?/i,
+                "regex": "roast save",
                 "experimental": false
-            }
-        }
-    },
-    "fun": {
-        "display_name": "Fun",
-        "description": "Just for fun",
-        "commands": {
+            },
             "vote": {
                 "display_names": ["<", ">", "points", "vote"],
                 "pretty_name": "Vote (</>)",
@@ -487,22 +519,22 @@ exports.categories = {
                 "regex": ["score(board)?", "(?: (\\d+))?"],
                 "experimental": false
             },
-            "order66": {
-                "display_names": ["execute order 66", "order 66"],
-                "pretty_name": "Order 66",
-                "short_description": "Destroy group temporarily",
-                "description": `Every single group member, including your Socialpath Yiyi Kuang, is now an enemy of the group chat (for ${config.order66Time} seconds)`,
-                "syntax": "execute order 66",
-                "example": "",
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /execute order 66/i,
-                "experimental": false
-            },
+            // "order66": {
+            //     "display_names": ["execute order 66", "order 66"],
+            //     "pretty_name": "Order 66",
+            //     "short_description": "Destroy group temporarily",
+            //     "description": `Every single group member, including your Socialpath Yiyi Kuang, is now an enemy of the group chat (for ${config.order66Time} seconds)`,
+            //     "syntax": "execute order 66",
+            //     "example": "",
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /execute order 66/i,
+            //     "experimental": false
+            // },
             "hitlights": {
                 "display_names": ["hit the lights"],
                 "pretty_name": "Hit the lights",
@@ -622,22 +654,22 @@ exports.categories = {
         "display_name": "Information",
         "description": "Retrieving info from various sources",
         "commands": {
-            "xkcd": {
-                "display_names": ["xkcd", "xkcd search"],
-                "pretty_name": "xkcd",
-                "short_description": "Links xkcd",
-                "description": "Outputs the numbered xkcd or search result (or a random one if none was specified)",
-                "syntax": "xkcd (new|{comic number}|search {search query})",
-                "example": ["xkcd new", "xkcd 303", "xkcd search Wisdom of the Ancients"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /xkcd(?: (new|\d+|search (.+)))?/i,
-                "experimental": false
-            },
+            // "xkcd": {
+            //     "display_names": ["xkcd", "xkcd search"],
+            //     "pretty_name": "xkcd",
+            //     "short_description": "Links xkcd",
+            //     "description": "Outputs the numbered xkcd or search result (or a random one if none was specified)",
+            //     "syntax": "xkcd (new|{comic number}|search {search query})",
+            //     "example": ["xkcd new", "xkcd 303", "xkcd search Wisdom of the Ancients"],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /xkcd(?: (new|\d+|search (.+)))?/i,
+            //     "experimental": false
+            // },
             "wiki": {
                 "display_names": ["wiki", "wikipedia", "wiki search"],
                 "pretty_name": "Wiki",
@@ -654,54 +686,54 @@ exports.categories = {
                 "regex": /wiki (.*)/i,
                 "experimental": false
             },
-            "space": {
-                "display_names": ["space"],
-                "pretty_name": "Space",
-                "short_description": "Search for images from the NASA database",
-                "description": "Performs a search on NASA's database of space imagery, found at https://images.nasa.gov/; use 'random' to get a random result rather than the top",
-                "syntax": "space (random) {search query}",
-                "example": ["space mars", "space milky way", "space random sun"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /space (rand(?:om)? )?(.*)/i,
-                "experimental": false
-            },
-            "wolfram": {
-                "display_names": ["wolfram"],
-                "pretty_name": "Wolfram",
-                "short_description": "Searches Wolfram Alpha",
-                "description": "Performs a search using Wolfram Alpha (http://www.wolframalpha.com)",
-                "syntax": "wolfram {query}",
-                "example": ["wolfram ∫(5x^2 + 10x + 34)dx", "wolfram Who is the president of the United States?"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /wolfram (.*)/i,
-                "experimental": false
-            },
-            "weather": {
-                "display_names": ["weather"],
-                "pretty_name": "Weather",
-                "short_description": "",
-                "description": "Get current weather for a given city",
-                "syntax": "weather {city name}",
-                "example": "weather Timonium",
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /weather (.+)/i,
-                "experimental": false
-            },
+            // "space": {
+            //     "display_names": ["space"],
+            //     "pretty_name": "Space",
+            //     "short_description": "Search for images from the NASA database",
+            //     "description": "Performs a search on NASA's database of space imagery, found at https://images.nasa.gov/; use 'random' to get a random result rather than the top",
+            //     "syntax": "space (random) {search query}",
+            //     "example": ["space mars", "space milky way", "space random sun"],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /space (rand(?:om)? )?(.*)/i,
+            //     "experimental": false
+            // },
+            // "wolfram": {
+            //     "display_names": ["wolfram"],
+            //     "pretty_name": "Wolfram",
+            //     "short_description": "Searches Wolfram Alpha",
+            //     "description": "Performs a search using Wolfram Alpha (http://www.wolframalpha.com)",
+            //     "syntax": "wolfram {query}",
+            //     "example": ["wolfram ∫(5x^2 + 10x + 34)dx", "wolfram Who is the president of the United States?"],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /wolfram (.*)/i,
+            //     "experimental": false
+            // },
+            // "weather": {
+            //     "display_names": ["weather"],
+            //     "pretty_name": "Weather",
+            //     "short_description": "",
+            //     "description": "Get current weather for a given city",
+            //     "syntax": "weather {city name}",
+            //     "example": "weather Timonium",
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /weather (.+)/i,
+            //     "experimental": false
+            // },
             "google": {
                 "display_names": ["google"],
                 "pretty_name": "Google",
@@ -718,298 +750,298 @@ exports.categories = {
                 "regex": /google (.+)/i,
                 "experimental": false
             },
-            "lucky": {
-                "display_names": ["lucky"],
-                "pretty_name": "Lucky",
-                "short_description": "I'm feeling lucky",
-                "description": "Replicates functionality of Google's \"I'm feeling lucky\" functionality (takes to first webpage result for a search)",
-                "syntax": "lucky {query}",
-                "example": ["lucky define testing"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /lucky (.+)/i,
-                "experimental": true
-            },
-            "covid": {
-                "display_names": ["covid"],
-                "pretty_name": "COVID",
-                "short_description": "Information about COVID-19",
-                "description": "Search various data sets for information about COVID cases around the world",
-                "syntax": "covid ((state|country|province|top|today|vaccine) {query})",
-                "example": ["covid", "covid state Maryland", "covid country Italy", "covid province Hubei", "covid top 5", "covid today all", "covid vaccine moderna"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /covid(?: (state|country|province|top|today|vaccine) (.+))?/i,
-                "experimental": false
-            },
-            "stocks": {
-                "display_names": ["stocks", "$"],
-                "pretty_name": "Stocks",
-                "short_description": "",
-                "description": "Get current stock prices",
-                "syntax": "${ticker symbol}",
-                "example": "$TSLA",
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optinoal": false
-                },
-                "regex": /\$([A-Z]+)/i,
-                "experimental": false
-            }
+            // "lucky": {
+            //     "display_names": ["lucky"],
+            //     "pretty_name": "Lucky",
+            //     "short_description": "I'm feeling lucky",
+            //     "description": "Replicates functionality of Google's \"I'm feeling lucky\" functionality (takes to first webpage result for a search)",
+            //     "syntax": "lucky {query}",
+            //     "example": ["lucky define testing"],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /lucky (.+)/i,
+            //     "experimental": true
+            // },
+            // "covid": {
+            //     "display_names": ["covid"],
+            //     "pretty_name": "COVID",
+            //     "short_description": "Information about COVID-19",
+            //     "description": "Search various data sets for information about COVID cases around the world",
+            //     "syntax": "covid ((state|country|province|top|today|vaccine) {query})",
+            //     "example": ["covid", "covid state Maryland", "covid country Italy", "covid province Hubei", "covid top 5", "covid today all", "covid vaccine moderna"],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /covid(?: (state|country|province|top|today|vaccine) (.+))?/i,
+            //     "experimental": false
+            // },
+            // "stocks": {
+            //     "display_names": ["stocks", "$"],
+            //     "pretty_name": "Stocks",
+            //     "short_description": "",
+            //     "description": "Get current stock prices",
+            //     "syntax": "${ticker symbol}",
+            //     "example": "$TSLA",
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optinoal": false
+            //     },
+            //     "regex": /\$([A-Z]+)/i,
+            //     "experimental": false
+            // }
         }
     },
-    "spotify": {
-        "display_name": "Spotify",
-        "description": "For interacting with Spotify",
-        "commands": {
-            "spotsearch": {
-                "display_names": ["search artist", "search song", "search track"],
-                "pretty_name": "Spotify search",
-                "short_description": "Search for music",
-                "description": "Searches Spotify's database for artists and songs",
-                "syntax": "search (artist|(song|track)) {query}",
-                "example": ["search artist The Goo Goo Dolls", "search song Back in Black"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /search (artist|song|track) (.*)/i,
-                "experimental": false
-            },
-            "song": {
-                "display_names": ["song", "get song"],
-                "pretty_name": "Song",
-                "short_description": "Random song",
-                "description": "Grabs a random song from member playlists added with 'playlist' command",
-                "syntax": "song ({member})",
-                "example": "song me",
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": true,
-                    "optional": true
-                },
-                "regex": "song",
-                "experimental": false
-            },
-            "playlist": {
-                "display_names": ["playlist"],
-                "pretty_name": "Playlist",
-                "short_description": "Add/update playlist",
-                "description": "Add or update playlist for the group – to find a playlist's URI in Spotify desktop, right click on it, select 'Share', and click 'URI'",
-                "syntax": "playlist {member} {playlist URI}",
-                "example": "playlist me spotify:user:astrocb:playlist:05zXCuscrw1BW5NyeN45DB",
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": true,
-                    "optional": true
-                },
-                "regex": ["playlist", "( spotify:user:([^:]+):playlist:([A-z0-9]+))?"],
-                "experimental": false
-            }
-        }
-    },
-    "photo": {
-        "display_name": "Photos",
-        "description": "For photo editing",
-        "commands": {
-            "bw": {
-                "display_names": ["bw", "black and white", "grayscale"],
-                "pretty_name": "Black & white",
-                "short_description": "Converts an image to black and white",
-                "description": "Converts an image to black and white with either a URL or an uploaded image",
-                "syntax": "bw ({url})",
-                "example": ["bw http://i.imgur.com/tzwVWot.png", "bw [attach an image]"],
-                "sudo": false,
-                "attachments": true,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /bw(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
-                "experimental": false
-            },
-            "sepia": {
-                "display_names": ["sepia"],
-                "pretty_name": "Sepia",
-                "short_description": "Converts an image to sepia tone",
-                "description": "Converts an image to sepia tone with either a URL or an uploaded image",
-                "syntax": "sepia ({url})",
-                "example": ["sepia http://i.imgur.com/tzwVWot.png", "sepia [attach an image]"],
-                "sudo": false,
-                "attachments": true,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /sepia(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
-                "experimental": false
-            },
-            "flip": {
-                "display_names": ["flip", "mirror"],
-                "pretty_name": "Flip",
-                "short_description": "Flips/mirrors an image",
-                "description": "Flips/mirrors the image from the given URL or attachments",
-                "syntax": "flip (horiz(ontal)|vert(ical)) ({url})",
-                "example": ["flip http://i.imgur.com/tzwVWot.png", "flip horizontal http://i.imgur.com/tzwVWot.png", "flip vert [attach an image]"],
-                "sudo": false,
-                "attachments": true,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /flip (horiz(?:ontal)?|vert(?:ical)?)(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
-                "experimental": false
-            },
-            "invert": {
-                "display_names": ["invert"],
-                "pretty_name": "Invert",
-                "short_description": "Invert image colors",
-                "description": "Inverts the colors of the image from the given URL or attachments",
-                "syntax": "invert ({url})",
-                "example": ["invert http://i.imgur.com/tzwVWot.png", "invert [attach an image]"],
-                "sudo": false,
-                "attachments": true,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /invert(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
-                "experimental": false
-            },
-            "blur": {
-                "display_names": ["blur"],
-                "pretty_name": "Blur",
-                "short_description": "Blurs an image",
-                "description": "Blurs the image by the given number of pixels from the given URL or attachments; optional param to do a Gaussian blur, which is very slow (< 15 pixels recommended for this one)",
-                "syntax": "blur {# of pixels} (gauss) ({url})",
-                "example": ["blur 50 http://i.imgur.com/tzwVWot.png", "blur 10 gauss [attach an image]"],
-                "sudo": false,
-                "attachments": true,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /blur(?: (\d+))?( gauss)?(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
-                "experimental": false
-            },
-            "overlay": {
-                "display_names": ["overlay"],
-                "pretty_name": "Overlay",
-                "short_description": "Overlays text on an image",
-                "description": "Overlays text on an image from the given URL or attachments",
-                "syntax": "overlay ({url}) {text}",
-                "example": ["overlay http://i.imgur.com/tzwVWot.png Hello there!", "overlay Wake up! [attach an image]"],
-                "sudo": false,
-                "attachments": true,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /overlay(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?(.*)/i,
-                "experimental": false
-            },
-            "brightness": {
-                "display_names": ["brighten", "darken"],
-                "pretty_name": "Brighten/darken",
-                "short_description": "Alters image brightness",
-                "description": "Brightens or darkens an image by the given percentage",
-                "syntax": "(brighten|darken) {percentage} ({url})",
-                "example": ["brighten 10 http://i.imgur.com/tzwVWot.png", "darken 20 [attach an image]"],
-                "sudo": false,
-                "attachments": true,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /(brighten|darken) (\d*)(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
-                "experimental": false
-            }
-        }
-    },
-    "umd": {
-        "display_name": "UMD",
-        "description": "Commands related to UMD",
-        "commands": {
-            "course": {
-                "display_names": ["course"],
-                "pretty_name": "Course",
-                "short_description": "UMD course info",
-                "description": "Gets information about a specific course at UMD",
-                "syntax": "course {course}",
-                "example": "course CMSC330",
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /course ([A-z]{4}[0-9]{3}[A-z]?)/i,
-                "experimental": false
-            },
-            "professor": {
-                "display_names": ["professor"],
-                "pretty_name": "Professor",
-                "short_description": "UMD professor info",
-                "description": "Gets information about a specific professor at UMD",
-                "syntax": "professor {professor}",
-                "example": "professor Allan Yashinski",
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /professor (.+)/i,
-                "experimental": false
-            },
-            "whereis": {
-                "display_names": ["whereis"],
-                "pretty_name": "Whereis",
-                "short_description": "Find UMD buildings",
-                "description": "Find the location of different UMD buildings",
-                "syntax": "whereis {building name or code}",
-                "example": "whereis AVW",
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /whereis (.+)/i,
-                "experimental": false
-            },
-            "findbus": {
-                "display_names": ["findbus"],
-                "pretty_name": "Find Bus",
-                "short_description": "Find UMD buses",
-                "description": "Find the location of different UMD buses",
-                "syntax": "findbus {bus number}",
-                "example": "findbus 117",
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /findbus (\d+)/i,
-                "experimental": false
-            }
-        }
-    },
+    // "spotify": {
+    //     "display_name": "Spotify",
+    //     "description": "For interacting with Spotify",
+    //     "commands": {
+    //         "spotsearch": {
+    //             "display_names": ["search artist", "search song", "search track"],
+    //             "pretty_name": "Spotify search",
+    //             "short_description": "Search for music",
+    //             "description": "Searches Spotify's database for artists and songs",
+    //             "syntax": "search (artist|(song|track)) {query}",
+    //             "example": ["search artist The Goo Goo Dolls", "search song Back in Black"],
+    //             "sudo": false,
+    //             "attachments": false,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /search (artist|song|track) (.*)/i,
+    //             "experimental": false
+    //         },
+    //         "song": {
+    //             "display_names": ["song", "get song"],
+    //             "pretty_name": "Song",
+    //             "short_description": "Random song",
+    //             "description": "Grabs a random song from member playlists added with 'playlist' command",
+    //             "syntax": "song ({member})",
+    //             "example": "song me",
+    //             "sudo": false,
+    //             "attachments": false,
+    //             "user_input": {
+    //                 "accepts": true,
+    //                 "optional": true
+    //             },
+    //             "regex": "song",
+    //             "experimental": false
+    //         },
+    //         "playlist": {
+    //             "display_names": ["playlist"],
+    //             "pretty_name": "Playlist",
+    //             "short_description": "Add/update playlist",
+    //             "description": "Add or update playlist for the group – to find a playlist's URI in Spotify desktop, right click on it, select 'Share', and click 'URI'",
+    //             "syntax": "playlist {member} {playlist URI}",
+    //             "example": "playlist me spotify:user:astrocb:playlist:05zXCuscrw1BW5NyeN45DB",
+    //             "sudo": false,
+    //             "attachments": false,
+    //             "user_input": {
+    //                 "accepts": true,
+    //                 "optional": true
+    //             },
+    //             "regex": ["playlist", "( spotify:user:([^:]+):playlist:([A-z0-9]+))?"],
+    //             "experimental": false
+    //         }
+    //     }
+    // },
+    // "photo": {
+    //     "display_name": "Photos",
+    //     "description": "For photo editing",
+    //     "commands": {
+    //         "bw": {
+    //             "display_names": ["bw", "black and white", "grayscale"],
+    //             "pretty_name": "Black & white",
+    //             "short_description": "Converts an image to black and white",
+    //             "description": "Converts an image to black and white with either a URL or an uploaded image",
+    //             "syntax": "bw ({url})",
+    //             "example": ["bw http://i.imgur.com/tzwVWot.png", "bw [attach an image]"],
+    //             "sudo": false,
+    //             "attachments": true,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /bw(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
+    //             "experimental": false
+    //         },
+    //         "sepia": {
+    //             "display_names": ["sepia"],
+    //             "pretty_name": "Sepia",
+    //             "short_description": "Converts an image to sepia tone",
+    //             "description": "Converts an image to sepia tone with either a URL or an uploaded image",
+    //             "syntax": "sepia ({url})",
+    //             "example": ["sepia http://i.imgur.com/tzwVWot.png", "sepia [attach an image]"],
+    //             "sudo": false,
+    //             "attachments": true,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /sepia(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
+    //             "experimental": false
+    //         },
+    //         "flip": {
+    //             "display_names": ["flip", "mirror"],
+    //             "pretty_name": "Flip",
+    //             "short_description": "Flips/mirrors an image",
+    //             "description": "Flips/mirrors the image from the given URL or attachments",
+    //             "syntax": "flip (horiz(ontal)|vert(ical)) ({url})",
+    //             "example": ["flip http://i.imgur.com/tzwVWot.png", "flip horizontal http://i.imgur.com/tzwVWot.png", "flip vert [attach an image]"],
+    //             "sudo": false,
+    //             "attachments": true,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /flip (horiz(?:ontal)?|vert(?:ical)?)(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
+    //             "experimental": false
+    //         },
+    //         "invert": {
+    //             "display_names": ["invert"],
+    //             "pretty_name": "Invert",
+    //             "short_description": "Invert image colors",
+    //             "description": "Inverts the colors of the image from the given URL or attachments",
+    //             "syntax": "invert ({url})",
+    //             "example": ["invert http://i.imgur.com/tzwVWot.png", "invert [attach an image]"],
+    //             "sudo": false,
+    //             "attachments": true,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /invert(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
+    //             "experimental": false
+    //         },
+    //         "blur": {
+    //             "display_names": ["blur"],
+    //             "pretty_name": "Blur",
+    //             "short_description": "Blurs an image",
+    //             "description": "Blurs the image by the given number of pixels from the given URL or attachments; optional param to do a Gaussian blur, which is very slow (< 15 pixels recommended for this one)",
+    //             "syntax": "blur {# of pixels} (gauss) ({url})",
+    //             "example": ["blur 50 http://i.imgur.com/tzwVWot.png", "blur 10 gauss [attach an image]"],
+    //             "sudo": false,
+    //             "attachments": true,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /blur(?: (\d+))?( gauss)?(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
+    //             "experimental": false
+    //         },
+    //         "overlay": {
+    //             "display_names": ["overlay"],
+    //             "pretty_name": "Overlay",
+    //             "short_description": "Overlays text on an image",
+    //             "description": "Overlays text on an image from the given URL or attachments",
+    //             "syntax": "overlay ({url}) {text}",
+    //             "example": ["overlay http://i.imgur.com/tzwVWot.png Hello there!", "overlay Wake up! [attach an image]"],
+    //             "sudo": false,
+    //             "attachments": true,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /overlay(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?(.*)/i,
+    //             "experimental": false
+    //         },
+    //         "brightness": {
+    //             "display_names": ["brighten", "darken"],
+    //             "pretty_name": "Brighten/darken",
+    //             "short_description": "Alters image brightness",
+    //             "description": "Brightens or darkens an image by the given percentage",
+    //             "syntax": "(brighten|darken) {percentage} ({url})",
+    //             "example": ["brighten 10 http://i.imgur.com/tzwVWot.png", "darken 20 [attach an image]"],
+    //             "sudo": false,
+    //             "attachments": true,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /(brighten|darken) (\d*)(?: ((?:http|ftp|https):\/\/(?:[\w_-]+(?:(?:\.[\w_-]+)+))(?:[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?))?/i,
+    //             "experimental": false
+    //         }
+    //     }
+    // },
+    // "umd": {
+    //     "display_name": "UMD",
+    //     "description": "Commands related to UMD",
+    //     "commands": {
+    //         "course": {
+    //             "display_names": ["course"],
+    //             "pretty_name": "Course",
+    //             "short_description": "UMD course info",
+    //             "description": "Gets information about a specific course at UMD",
+    //             "syntax": "course {course}",
+    //             "example": "course CMSC330",
+    //             "sudo": false,
+    //             "attachments": false,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /course ([A-z]{4}[0-9]{3}[A-z]?)/i,
+    //             "experimental": false
+    //         },
+    //         "professor": {
+    //             "display_names": ["professor"],
+    //             "pretty_name": "Professor",
+    //             "short_description": "UMD professor info",
+    //             "description": "Gets information about a specific professor at UMD",
+    //             "syntax": "professor {professor}",
+    //             "example": "professor Allan Yashinski",
+    //             "sudo": false,
+    //             "attachments": false,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /professor (.+)/i,
+    //             "experimental": false
+    //         },
+    //         "whereis": {
+    //             "display_names": ["whereis"],
+    //             "pretty_name": "Whereis",
+    //             "short_description": "Find UMD buildings",
+    //             "description": "Find the location of different UMD buildings",
+    //             "syntax": "whereis {building name or code}",
+    //             "example": "whereis AVW",
+    //             "sudo": false,
+    //             "attachments": false,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /whereis (.+)/i,
+    //             "experimental": false
+    //         },
+    //         "findbus": {
+    //             "display_names": ["findbus"],
+    //             "pretty_name": "Find Bus",
+    //             "short_description": "Find UMD buses",
+    //             "description": "Find the location of different UMD buses",
+    //             "syntax": "findbus {bus number}",
+    //             "example": "findbus 117",
+    //             "sudo": false,
+    //             "attachments": false,
+    //             "user_input": {
+    //                 "accepts": false,
+    //                 "optional": false
+    //             },
+    //             "regex": /findbus (\d+)/i,
+    //             "experimental": false
+    //         }
+    //     }
+    // },
     "misc": {
         "display_name": "Miscellaneous",
         "description": "Random utility stuff",
@@ -1030,22 +1062,22 @@ exports.categories = {
                 "regex": /pin(?:(?:\s|$)([\S]+)?(?:\s|$)?([\s\S]+)?)?/im,
                 "experimental": false
             },
-            "tab": {
-                "display_names": ["tab"],
-                "pretty_name": "Tab",
-                "short_description": "Keeps a running total",
-                "description": "Maintains a running total for the group that can be incremented or decremented (default amount is 1)",
-                "syntax": "tab {add|subtract|clear} ({amount})",
-                "example": ["tab add 5.50", "tab subtract 2.10", "tab add", "tab subtract", "tab clear"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /tab(?: (add|subtract|clear|split)(?: \$?((?:\d+)?(?:\.\d+)?))?|)?/i,
-                "experimental": false
-            },
+            // "tab": {
+            //     "display_names": ["tab"],
+            //     "pretty_name": "Tab",
+            //     "short_description": "Keeps a running total",
+            //     "description": "Maintains a running total for the group that can be incremented or decremented (default amount is 1)",
+            //     "syntax": "tab {add|subtract|clear} ({amount})",
+            //     "example": ["tab add 5.50", "tab subtract 2.10", "tab add", "tab subtract", "tab clear"],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /tab(?: (add|subtract|clear|split)(?: \$?((?:\d+)?(?:\.\d+)?))?|)?/i,
+            //     "experimental": false
+            // },
             "remind": {
                 "display_names": ["remind"],
                 "pretty_name": "Remind",
@@ -1110,38 +1142,38 @@ exports.categories = {
                 "regex": /timer (start|stop)/i,
                 "experimental": false
             },
-            "follow": {
-                "display_names": ["follow", "unfollow"],
-                "pretty_name": "Follow",
-                "short_description": "Follow a Twitter account",
-                "description": "Follows a Twitter account, sending new tweets to the chat as they're posted",
-                "syntax": "(un)follow {twitter_handle}|list",
-                "example": ["follow @AstroCB", "unfollow @AstroCB", "follow list"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /(un)?follow @?(\w+)/i,
-                "experimental": false
-            },
-            "subscribe": {
-                "display_names": ["subscribe", "unsubscribe"],
-                "pretty_name": "Subscribe",
-                "short_description": "Subscribe to an RSS feed",
-                "description": "Subscribes to an RSS feed, sending new items to the chat as they're added",
-                "syntax": "(un)subscribe {feed URL}|list",
-                "example": ["subscribe https://github.com/AstroCB/AssumeZero-Bot/commits/master.atom", "unsubscribe https://github.com/AstroCB/AssumeZero-Bot/commits/master.atom", "subscribe list"],
-                "sudo": false,
-                "attachments": false,
-                "user_input": {
-                    "accepts": false,
-                    "optional": false
-                },
-                "regex": /(un)?subscribe (\S+)/i,
-                "experimental": false
-            },
+            // "follow": {
+            //     "display_names": ["follow", "unfollow"],
+            //     "pretty_name": "Follow",
+            //     "short_description": "Follow a Twitter account",
+            //     "description": "Follows a Twitter account, sending new tweets to the chat as they're posted",
+            //     "syntax": "(un)follow {twitter_handle}|list",
+            //     "example": ["follow @AstroCB", "unfollow @AstroCB", "follow list"],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /(un)?follow @?(\w+)/i,
+            //     "experimental": false
+            // },
+            // "subscribe": {
+            //     "display_names": ["subscribe", "unsubscribe"],
+            //     "pretty_name": "Subscribe",
+            //     "short_description": "Subscribe to an RSS feed",
+            //     "description": "Subscribes to an RSS feed, sending new items to the chat as they're added",
+            //     "syntax": "(un)subscribe {feed URL}|list",
+            //     "example": ["subscribe https://github.com/AstroCB/AssumeZero-Bot/commits/master.atom", "unsubscribe https://github.com/AstroCB/AssumeZero-Bot/commits/master.atom", "subscribe list"],
+            //     "sudo": false,
+            //     "attachments": false,
+            //     "user_input": {
+            //         "accepts": false,
+            //         "optional": false
+            //     },
+            //     "regex": /(un)?subscribe (\S+)/i,
+            //     "experimental": false
+            // },
         }
     }
 };
