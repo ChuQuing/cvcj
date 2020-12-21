@@ -815,10 +815,13 @@ const funcs = {
         const userId = groupInfo.members[user];
         const user_cap = user.substring(0, 1).toUpperCase() + user.substring(1);
         // utils.sendMessage()
-        utils.sendMessage(`Roast called on ${user_cap}`, threadId);
+        // utils.sendMessage(`Roast called on ${user_cap}`, threadId);
         utils.getRoasts(userId, (err, val) => {
             if(!err) {
                 const roasts = JSON.parse(val);
+                if(roasts.length == 0) {
+                    return utils.sendMessage(`No roasts saved for ${user_cap}`, threadId);
+                }
                 const roast =  roasts[Math.floor(Math.random() * roasts.length)];
                 return utils.sendMessage(roast, threadId);
             }
@@ -871,13 +874,16 @@ const funcs = {
     },
     "saveRoast": (threadId, cmatch, groupInfo,  _, __, ___, messageObj) => {
         console.log(cmatch);
+        if(messageObj.type != "message_reply") {
+            return utils.sendMessage(`You need to reply to a message to save a roast.`, threadId);
+        }
         const roast = messageObj.messageReply.body;
         console.log(roast);
         const user = cmatch[1].toLowerCase();
         const userId = groupInfo.members[user];
         const user_cap = user.substring(0, 1).toUpperCase() + user.substring(1);
         // utils.sendMessage()
-        utils.sendMessage(`Roast saved for ${user_cap}`, threadId);
+        // utils.sendMessage(`Roast saved for ${user_cap}`, threadId);
         utils.setRoast(userId, roast, (err, val) => {
             if (!err) {
                 utils.sendMessage(`Success! You've saved a roast for ${user_cap}.`, threadId);
