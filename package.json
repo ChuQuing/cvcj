@@ -1,5 +1,5 @@
 {
-  "name": "assumezero-bot",
+  "name": "cvcj-bot",
   "version": "2.0.0",
   "description": "A group chat bot that performs a variety of functions.",
   "main": "main.js",
@@ -14,11 +14,11 @@
     "login": "node src/main.js --force-login",
     "test": "node tests/tests.js"
   },
-  "author": "Cameron Bernhardt (AstroCB)",
+  "author": "Shashwat Jolly (credit to Cameron Bernhardt (AstroCB))",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AstroCB/AssumeZero-Bot"
+    "url": "https://github.com/shashwatjolly/cvcj-Bot"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
