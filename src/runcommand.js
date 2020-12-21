@@ -819,7 +819,7 @@ const funcs = {
         utils.getRoasts(userId, (err, val) => {
             if(!err) {
                 const roasts = JSON.parse(val);
-                if(roasts.length == 0) {
+                if(!roasts || roasts.length == 0) {
                     return utils.sendMessage(`No roasts saved for ${user_cap}`, threadId);
                 }
                 const roast =  roasts[Math.floor(Math.random() * roasts.length)];
