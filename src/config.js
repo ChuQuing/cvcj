@@ -13,7 +13,7 @@ exports.owner = {
 // Bot information
 exports.bot = {
     "names": {
-        "short": "cvcj-bot", // Will be used as 'nickname' in chat (remove if same as account name)
+        "short": "CVCJ_Bot", // Will be used as 'nickname' in chat (remove if same as account name)
         "long": "CVCJ Bot" // Name displayed in profile on bot's Facebook account
     },
     "id": "100060077085629" // Bot's ID (for security purposes in commands)
@@ -99,7 +99,7 @@ exports.addBufferLimit = 5;
 // List of responses for "answer" command
 exports.answerResponses = ["Yes", "No", "Maybe", "It is certain", "Time will tell", "Ask again later",
     "Only if you believe", "Possibly", "Never", "Of course", "No way", "You're out of your mind", "Nope",
-    "Yep", "Good one", "Eh", "..."
+    "Yep", "Good one", "Eh", "Si crees", "Por supuesto", "...", "Welp"
 ];
 
 // Default bounds for RNG command
