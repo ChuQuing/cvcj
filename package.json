@@ -1,5 +1,5 @@
 {
-  "name": "assumezero-bot",
+  "name": "cvcj-bot",
   "version": "2.0.0",
   "description": "A group chat bot that performs a variety of functions.",
   "main": "main.js",
@@ -7,18 +7,18 @@
     "node": "12.18.2"
   },
   "scripts": {
-    "start": "pm2 start src/main.js --name 'assumezero-bot'; npm run-script logs",
-    "restart": "pm2 restart assumezero-bot",
-    "stop": "pm2 stop assumezero-bot",
-    "logs": "pm2 logs assumezero-bot --lines=1000",
+    "start": "pm2 start src/main.js --name 'cvcj-bot'; npm run-script logs",
+    "restart": "pm2 restart cvcj-bot",
+    "stop": "pm2 stop cvcj-bot",
+    "logs": "pm2 logs cvcj-bot --lines=1000",
     "login": "node src/main.js --force-login",
     "test": "node tests/tests.js"
   },
-  "author": "Cameron Bernhardt (AstroCB)",
+  "author": "Shashwat Jolly",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AstroCB/AssumeZero-Bot"
+    "url": "https://github.com/shashwatjolly/cvcj-bot"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
