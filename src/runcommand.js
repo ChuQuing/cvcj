@@ -1601,7 +1601,7 @@ const funcs = {
         }
     },
     "undo": (threadId, _, groupInfo, api, __, ___, mObj) => {
-        return utils.sendMessage(`You can't just erase what happened. Did someone take a screenshot?`);
+        return utils.sendMessage(`You can't just erase what happened. Did someone take a screenshot?`, threadId);
         // api.unsendMessage(groupInfo.lastBotMessageID, err => {
         //     if (err) {
         //         utils.sendMessage("Can't undo messages sent > 10 minutes ago.", threadId, undefined, mObj.messageID);
