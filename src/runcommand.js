@@ -583,6 +583,43 @@ const funcs = {
             console.log("Unable to pin message due to malformed db entry");
         }
     },
+    "contact": (threadId, cmatch, groupInfo) => {
+        console.log(cmatch);
+        console.log(groupInfo);
+        const user = cmatch[1].toLowerCase();
+        const userId = groupInfo.members[user];
+        const user_cap = user.substring(0, 1).toUpperCase() + user.substring(1);
+        // utils.sendMessage()
+        // utils.sendMessage(`Roast called on ${user_cap}`, threadId);
+        utils.getContact(userId, (err, val) => {
+            if(!err) {
+                const contact = JSON.parse(val);
+                console.log(contact);
+                if(!contact) {
+                    return utils.sendMessage(`Contact info not saved for ${user_cap}`, threadId);
+                }
+                const {mobNo, email} =  contact;
+                return utils.sendMessage(`Contact info for ${user_cap}:\nMobile number: ${mobNo}\nEmail: ${email}`, threadId);
+            }
+            else {
+                console.log(err);
+            }
+        });
+    },
+    "saveContact": (threadId, cmatch, groupInfo,  _, userId, ___, messageObj) => {
+        console.log(cmatch);
+        const mobNo = cmatch[1].toString();
+        const email = cmatch[2];
+        console.log(mobNo);
+        console.log(email);
+        utils.setContact(userId, {mobNo, email}, (err, val) => {
+            if (!err) {
+                utils.sendMessage(`Success! You've saved your contact info.`, threadId);
+            } else {
+                console.log(err);
+            }
+        })
+    },
     "tab": (threadId, cmatch, groupInfo) => {
         const op = cmatch[1];
         const amt = parseFloat(cmatch[2]) || 1;
@@ -940,6 +977,10 @@ const funcs = {
         //         }
         //     });
         // }
+    },
+    "merryChristmas": (threadId, cmatch, groupInfo) => {
+        utils.sendMessage(`Merry Christmas!`, threadId);
+        utils.sendMessage(`https://www.youtube.com/watch?v=aAkMkVFwAoo`, threadId);
     },
     "vote": (threadId, cmatch, groupInfo) => {
         console.log(cmatch);

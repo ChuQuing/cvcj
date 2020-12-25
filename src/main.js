@@ -55,6 +55,7 @@ function main(err, api) {
 
     // Kick off the message handler
     stopListening = api.listenMqtt(handleMessage);
+    api.setOptions({selfListen: true});
     // Kick off the recurring ticker
     setInterval(ticker.ticker, config.tickerInterval * 60000);
 
@@ -88,7 +89,7 @@ function handleMessage(err, message, external = false, api = gapi) { // New mess
                 // Handle messages
                 const senderId = message.senderID;
                 botcore.banned.isUser(senderId, isBanned => {
-                    if ((message.type == "message" || message.type == "message_reply") && senderId != config.bot.id && !isBanned) { // Sender is not banned and is not the bot
+                    if ((message.type == "message" || message.type == "message_reply") && !isBanned) { // Sender is not banned and is not the bot
                         const m = message.body;
                         const attachments = message.attachments;
                         // Handle message body

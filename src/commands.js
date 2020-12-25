@@ -487,6 +487,22 @@ exports.categories = {
                 "regex": "roast save",
                 "experimental": false
             },
+            "merryChristmas": {
+                "display_names": ["Christmas"],
+                "pretty_name": "Merry Christmas",
+                "short_description": "Wish everyone a Merry Christmas!",
+                "description": "Allows users to send a Christmas wish to everyone.",
+                "syntax": "merry christmas",
+                "example": ["merry christmas"],
+                "sudo": false,
+                "attachments": false,
+                "user_input": {
+                    "accepts": false,
+                    "optional": false
+                },
+                "regex": "merry christmas",
+                "experimental": false
+            },
             "vote": {
                 "display_names": ["<", ">", "points", "vote"],
                 "pretty_name": "Vote (</>)",
@@ -1060,6 +1076,38 @@ exports.categories = {
                     "optional": false
                 },
                 "regex": /pin(?:(?:\s|$)([\S]+)?(?:\s|$)?([\s\S]+)?)?/im,
+                "experimental": false
+            },
+            "contact": {
+                "display_names": ["Contact"],
+                "pretty_name": "Contact",
+                "short_description": "Get contact info for users",
+                "description": "Allows users to retrieve the saved mobile number and email address for a user.",
+                "syntax": "contact {member}",
+                "example": ["contact me"],
+                "sudo": false,
+                "attachments": false,
+                "user_input": {
+                    "accepts": true,
+                    "optional": false
+                },
+                "regex": "contact",
+                "experimental": false
+            },
+            "saveContact": {
+                "display_names": ["contact save"],
+                "pretty_name": "Save Contact",
+                "short_description": "Save contact info for users",
+                "description": "Allows users to save their mobile number and email address.",
+                "syntax": "contact save {mobile_number} {email_address}",
+                "example": ["contact save 9999999999 hello@cvcj.com"],
+                "sudo": false,
+                "attachments": false,
+                "user_input": {
+                    "accepts": false,
+                    "optional": false
+                },
+                "regex": /contact save (\d{10}) (\S+@\S+\.\S+)/,
                 "experimental": false
             },
             // "tab": {
